@@ -1,4 +1,4 @@
-const CACHE = "satr-v3"
+const CACHE = "satr-v4"
 const FILES = [
   "./",
   "./index.html",
