@@ -12,7 +12,7 @@
 
 ## English
 
-Satr fixes a mixed Arabic and English line before you post it. On X, GitHub, and other left-to-right pages, «جربت Claude Code اليوم!» swaps its words and the exclamation mark jumps to the start. Paste the line and copy the result, or install the Chrome extension. It does not reverse letters. Names like José stay one word, Arabic-Indic digits stay in order, and an emoji at the start of the line does not flip the sentence.
+Satr fixes a mixed Arabic and English line before you post it. On X, GitHub, and other left-to-right pages, «جربت Claude Code اليوم!» swaps its words and the exclamation mark jumps to the start. Paste the line and copy the result, or install the [Chrome extension](https://github.com/khrawaa27-hash/satr/releases/latest/download/satr-chrome.zip). It does not reverse letters. Names like José stay one word, Arabic-Indic digits stay in order, and an emoji at the start of the line does not flip the sentence.
 
 Public page: <https://khrawaa27-hash.github.io/satr/>
 
@@ -30,11 +30,12 @@ npm start
 
 ## إضافة كروم
 
-استخدم مجلد [`extension`](https://github.com/khrawaa27-hash/satr/tree/master/extension) من المستودع.
+[نزّل satr-chrome.zip](https://github.com/khrawaa27-hash/satr/releases/latest/download/satr-chrome.zip)
 
-1. افتح `chrome://extensions`.
-2. فعّل وضع المطوّر.
-3. اختر «Load unpacked» ثم المجلد بعد فك الضغط.
+1. فك الضغط.
+2. افتح `chrome://extensions`.
+3. فعّل وضع المطوّر.
+4. اختر «Load unpacked» ثم مجلد `satr`.
 
 الإضافة تضبط اتجاه الفقرات العربية إلى اليمين داخل أي صفحة، وتترك كتل الكود كما هي. من النافذة المنبثقة يمكن إيقافها أو لصق نص قبل النشر. لا تجمع نصاً ولا ترسله: [الخصوصية](https://khrawaa27-hash.github.io/satr/privacy.html).
 
