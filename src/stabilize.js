@@ -35,7 +35,18 @@ function isArabic(cp) {
  * @param {number} cp
  */
 function isLatinLetter(cp) {
-  return (cp >= 0x41 && cp <= 0x5a) || (cp >= 0x61 && cp <= 0x7a)
+  if ((cp >= 0x41 && cp <= 0x5a) || (cp >= 0x61 && cp <= 0x7a)) return true
+  if (cp >= 0x00c0 && cp <= 0x00ff && cp !== 0x00d7 && cp !== 0x00f7) return true
+  if (cp >= 0x0100 && cp <= 0x024f) return true
+  return false
+}
+
+/**
+ * Combining accents stay on the letter they follow.
+ * @param {number} cp
+ */
+function isCombiningMark(cp) {
+  return cp >= 0x0300 && cp <= 0x036f
 }
 
 /**
@@ -115,7 +126,7 @@ function scan(line) {
     if (k === "ar" || k === "en") {
       let j = i + 1
       while (j < chars.length) {
-        if (kind(chars[j].cp) === k) {
+        if (kind(chars[j].cp) === k || isCombiningMark(chars[j].cp)) {
           j += 1
           continue
         }

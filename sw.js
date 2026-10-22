@@ -1,7 +1,8 @@
-const CACHE = "satr-v2"
+const CACHE = "satr-v3"
 const FILES = [
   "./",
   "./index.html",
+  "./privacy.html",
   "./manifest.json",
   "./src/app.css",
   "./src/app.js",

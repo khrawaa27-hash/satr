@@ -99,6 +99,40 @@ test("platform names stay in an Arabic sentence", () => {
   assert.equal(/[\u202A-\u202E]/.test(fixed), false)
 })
 
+test("Arabic-Indic digits stay in order inside an Arabic price", () => {
+  const input = "السعر ١٢٠ دينار"
+  const { fixed } = stabilizeLine(input)
+  const seen = visual(fixed)
+  assert.match(seen, /١٢٠/)
+  assert.equal(seen.endsWith(displayed("السعر")), true)
+  assert.equal(seen.startsWith(displayed("دينار")), true)
+})
+
+test("accented Latin names stay one word", () => {
+  const input = "مع José اليوم"
+  const { fixed } = stabilizeLine(input)
+  assert.equal(fixed.includes(`${LRI}José${PDI}`), true)
+  assert.match(visual(fixed), /José/)
+  assert.equal(visual(fixed).includes("éJos"), false)
+})
+
+test("an emoji at the start does not flip the sentence", () => {
+  const input = "🔥 جربت Claude Code اليوم!"
+  const { fixed, warnings } = stabilizeLine(input)
+  assert.equal(warnings.length, 0)
+  const seen = visual(fixed)
+  assert.equal(seen.endsWith("🔥"), true)
+  assert.equal(seen.startsWith("!"), true)
+  assert.equal(seen.endsWith("🔥"), true)
+  assert.match(seen, /Claude Code/)
+})
+
+test("a line starting with an accented name is reported whole", () => {
+  const { warnings, fixed } = stabilizeLine("Café أرخص اليوم")
+  assert.match(warnings[0], /Café/)
+  assert.equal(fixed.includes(`${LRI}Café${PDI}`), true)
+})
+
 test("showMarks is readable", () => {
   assert.match(showMarks(RLI + LRI + "A" + PDI + RLM + PDI), /‹RLI›/)
 })
