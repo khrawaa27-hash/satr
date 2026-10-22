@@ -39,6 +39,10 @@ header h1 {
   color: #4e463c;
 }
 
+.foot a {
+  color: #8a3d12;
+}
+
 .composer,
 .compare article {
   background: #fbf7f0;
