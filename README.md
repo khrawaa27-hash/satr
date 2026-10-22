@@ -20,7 +20,7 @@ npm start
 
 ## إضافة كروم
 
-نزّل [آخر إصدار](https://github.com/khrawaa27-hash/satr/releases/latest) وفك الضغط، أو استخدم مجلد `extension` من المستودع.
+استخدم مجلد [`extension`](https://github.com/khrawaa27-hash/satr/tree/master/extension) من المستودع.
 
 1. افتح `chrome://extensions`.
 2. فعّل وضع المطوّر.
