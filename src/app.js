@@ -11,8 +11,8 @@ const sampleButton = document.querySelector("#sample")
 
 const sample = [
   "جربت Claude Code اليوم!",
+  "ينقلب على X وGitHub ومنصات التواصل وكافة المواقع الأخرى.",
   "VS Code أقوى من اللي أتوقع.",
-  "شوف https://github.com والسعر 120 دولار.",
 ].join("\n")
 
 /**
@@ -74,5 +74,29 @@ sampleButton.addEventListener("click", () => {
   input.focus()
 })
 
-input.value = sample
-render(sample)
+for (const node of document.querySelectorAll("[data-stabilize]")) {
+  node.textContent = stabilize(node.textContent.trim()).fixed
+}
+
+const shared = new URLSearchParams(location.search)
+const sharedText = [shared.get("title"), shared.get("text")].filter(Boolean).join("\n")
+input.value = sharedText || sample
+render(input.value)
+
+const installNote = document.querySelector("#install-note")
+const installButton = document.querySelector("#install")
+const standalone =
+  window.matchMedia("(display-mode: standalone)").matches || navigator.standalone === true
+if (!standalone) installNote.hidden = false
+
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault()
+  installButton.hidden = false
+  installButton.addEventListener("click", async () => {
+    await event.prompt()
+  })
+})
+
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("./sw.js").catch(() => {})
+}

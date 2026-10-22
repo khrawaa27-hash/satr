@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "سطر",
+  "description": "Fixes Arabic text direction on X, GitHub, social platforms, and every other site.",
+  "version": "0.1.0",
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "سطر",
+    "default_icon": {
+      "16": "icons/16.png",
+      "48": "icons/48.png",
+      "128": "icons/128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/16.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

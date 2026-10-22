@@ -2,8 +2,14 @@
 <html lang="ar" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#1c1915" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="سطر" />
     <title>سطر — تثبيت اتجاه العربي والإنجليزي</title>
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="icon" href="./icons/192.png" />
+    <link rel="apple-touch-icon" href="./icons/192.png" />
     <link rel="stylesheet" href="./src/app.css" />
   </head>
   <body>
@@ -11,9 +17,8 @@
       <header>
         <p class="mark">سطر</p>
         <h1>ثبّت ترتيب الكلمات قبل ما تنشر.</h1>
-        <p class="lead">
-          سطر عربي فيه كلمة إنجليزية ينقلب على X وGitHub لأن الصفحة اتجاهها يسار.
-          سطر يغلّف الكلمة الإنجليزية بعازل، ويثبّت الفقرة لليمين، بدون ما يعكس الحروف.
+        <p class="lead" data-stabilize>
+          ثبّت المنشور قبل ما ينزل على X وGitHub ومنصات التواصل وكافة المواقع الأخرى.
         </p>
       </header>
 
@@ -45,10 +50,13 @@
         </article>
       </section>
 
-      <p class="foot">
-        العلامات تثبّت ترتيب الكلمات وموضع النقطة. محاذاة الفقرة يميناً قرار الموقع نفسه،
-        وهذا يأتي مع إضافة المتصفح. ما نضع علامة قلب إجباري، لأنها تُعلَّم داخل GitHub وVS Code.
+      <p class="foot" data-stabilize>
+        إضافة كروم تصلّح القراءة داخل الصفحة. على الهاتف، أضف سطر إلى الشاشة الرئيسية أو شارك النص إليه من أي تطبيق.
       </p>
+      <p id="install-note" class="foot" hidden>
+        من قائمة المتصفح اختر «إضافة إلى الشاشة الرئيسية». بعدها مشاركة أي نص تفتح سطر جاهزاً.
+      </p>
+      <button id="install" type="button" hidden>ثبّت التطبيق</button>
     </main>
     <script type="module" src="./src/app.js"></script>
   </body>

@@ -3,10 +3,14 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test src/stabilize.test.js",
+    "build": "node scripts/icons.js && node scripts/build-extension.js",
+    "test": "node scripts/build-extension.js && node --test src/stabilize.test.js src/fix-dom.test.js",
     "start": "npx --yes serve . -p 4173"
   },
   "dependencies": {
     "bidi-js": "^1.0.3"
+  },
+  "devDependencies": {
+    "linkedom": "^0.18.14"
   }
 }

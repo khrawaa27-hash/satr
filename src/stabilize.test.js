@@ -88,6 +88,17 @@ test("multiline keeps line numbers in warnings", () => {
   assert.match(lines[0].warnings[0], /VS Code/)
 })
 
+test("platform names stay in an Arabic sentence", () => {
+  const input = "ينقلب على X وGitHub ومنصات التواصل وكافة المواقع الأخرى."
+  const { fixed } = stabilizeLine(input)
+  const seen = visual(fixed)
+  assert.equal(seen.endsWith(displayed("ينقلب")), true)
+  assert.equal(seen.startsWith("."), true)
+  assert.match(seen, /X/)
+  assert.match(seen, /GitHub/)
+  assert.equal(/[\u202A-\u202E]/.test(fixed), false)
+})
+
 test("showMarks is readable", () => {
   assert.match(showMarks(RLI + LRI + "A" + PDI + RLM + PDI), /‹RLI›/)
 })

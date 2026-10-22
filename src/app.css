@@ -11,11 +11,12 @@
 
 body {
   margin: 0;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 main {
   width: min(920px, calc(100% - 32px));
-  margin: 40px auto 64px;
+  margin: max(24px, env(safe-area-inset-top)) auto 64px;
 }
 
 header h1 {
@@ -106,10 +107,15 @@ button {
   cursor: pointer;
 }
 
-#sample {
+#sample,
+#install {
   background: transparent;
   color: #1c1915;
   border: 1px solid #1c1915;
+}
+
+#install {
+  margin-top: 8px;
 }
 
 .check {
