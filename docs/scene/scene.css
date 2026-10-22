@@ -1,0 +1,332 @@
+:root {
+  --night: #110e0b;
+  --paper: #fbf8f2;
+  --cream: #efe6d6;
+  --ink: #15120e;
+  --muted: #7d7468;
+  --copper: #c8743a;
+  --bad: #e0483d;
+  --good: #2fa36f;
+  --sans: "Inter", "Segoe UI", sans-serif;
+  --arabic: "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html,
+body {
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+}
+
+body {
+  background:
+    radial-gradient(1100px 700px at 82% 8%, rgb(200 116 58 / 0.22), transparent 60%),
+    radial-gradient(900px 600px at 10% 100%, rgb(200 116 58 / 0.12), transparent 60%),
+    var(--night);
+  color: var(--cream);
+  font-family: var(--arabic);
+  -webkit-font-smoothing: antialiased;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(rgb(255 255 255 / 0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+#stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+/* Title and closing cards */
+
+.hero {
+  display: grid;
+  justify-items: center;
+  gap: 28px;
+  text-align: center;
+}
+
+.logo {
+  width: 168px;
+  height: 168px;
+  border-radius: 44px;
+  background: var(--cream);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 30px 90px rgb(0 0 0 / 0.5);
+}
+
+.logo span {
+  width: 92px;
+  height: 92px;
+  border-radius: 20px;
+  background: var(--ink);
+  position: relative;
+}
+
+.logo span::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  bottom: 18px;
+  width: 14px;
+  border-radius: 7px;
+  background: var(--cream);
+}
+
+.wordmark {
+  font-size: 150px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.tagline {
+  font-size: 50px;
+  font-weight: 500;
+  color: var(--cream);
+}
+
+.subtitle {
+  font-family: var(--sans);
+  font-size: 30px;
+  font-weight: 500;
+  color: rgb(239 230 214 / 0.6);
+  direction: ltr;
+}
+
+.url {
+  margin-top: 18px;
+  font-family: var(--sans);
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--copper);
+  direction: ltr;
+}
+
+.pills {
+  display: flex;
+  gap: 16px;
+  font-family: var(--sans);
+  direction: ltr;
+}
+
+.pills span {
+  padding: 12px 26px;
+  border-radius: 999px;
+  border: 1.5px solid rgb(239 230 214 / 0.22);
+  font-size: 24px;
+  font-weight: 500;
+  color: rgb(239 230 214 / 0.8);
+}
+
+/* Post scenes */
+
+.scene {
+  display: grid;
+  justify-items: center;
+  gap: 40px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 30px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 0.06);
+  border: 1.5px solid rgb(255 255 255 / 0.1);
+  font-size: 32px;
+  font-weight: 600;
+}
+
+.chip i {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--tone);
+  box-shadow: 0 0 22px var(--tone);
+}
+
+.chip small {
+  font-family: var(--sans);
+  font-size: 24px;
+  font-weight: 500;
+  color: rgb(239 230 214 / 0.55);
+}
+
+.bad {
+  --tone: var(--bad);
+}
+
+.good {
+  --tone: var(--good);
+}
+
+.card {
+  width: 1240px;
+  padding: 52px 60px 46px;
+  border-radius: 36px;
+  background: var(--paper);
+  color: var(--ink);
+  box-shadow:
+    0 50px 140px rgb(0 0 0 / 0.55),
+    0 0 0 1px rgb(0 0 0 / 0.04);
+  direction: ltr;
+  text-align: left;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2b241c, #5c3a1f);
+}
+
+.who {
+  display: grid;
+  gap: 2px;
+  font-family: var(--sans);
+}
+
+.who b {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.who span {
+  font-size: 24px;
+  color: var(--muted);
+}
+
+.where {
+  margin-left: auto;
+  font-family: var(--sans);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 10px 18px;
+  border-radius: 12px;
+  background: rgb(0 0 0 / 0.05);
+}
+
+.post {
+  font-family: var(--arabic);
+  font-size: 56px;
+  line-height: 1.75;
+  white-space: pre-line;
+}
+
+.post .p {
+  color: var(--tone);
+  font-weight: 700;
+  padding: 0 4px;
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--tone) 16%, transparent);
+}
+
+.foot {
+  display: flex;
+  gap: 34px;
+  margin-top: 30px;
+  padding-top: 26px;
+  border-top: 1.5px solid rgb(0 0 0 / 0.07);
+  font-family: var(--sans);
+  font-size: 22px;
+  color: var(--muted);
+}
+
+.caption {
+  font-size: 34px;
+  font-weight: 500;
+  color: rgb(239 230 214 / 0.85);
+  direction: rtl;
+}
+
+.caption small {
+  display: block;
+  margin-top: 6px;
+  font-family: var(--sans);
+  font-size: 24px;
+  color: rgb(239 230 214 / 0.5);
+  direction: ltr;
+  text-align: center;
+}
+
+.ghost .chip,
+.ghost .post,
+.ghost .caption {
+  visibility: hidden;
+}
+
+/* Side by side still for the README */
+
+.pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  direction: ltr;
+  width: 1760px;
+}
+
+.pair .scene {
+  gap: 30px;
+}
+
+.pair .card {
+  width: 100%;
+  padding: 40px 44px 36px;
+}
+
+.pair .post {
+  font-size: 40px;
+}
+
+.pair .chip {
+  font-size: 28px;
+}
+
+.pair-title {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  display: grid;
+  gap: 8px;
+}
+
+.pair-title b {
+  font-size: 54px;
+  font-weight: 700;
+}
+
+.pair-title span {
+  direction: ltr;
+  font-family: var(--sans);
+  font-size: 26px;
+  color: rgb(239 230 214 / 0.55);
+}

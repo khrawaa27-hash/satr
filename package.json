@@ -5,6 +5,7 @@
   "scripts": {
     "build": "node scripts/icons.js && node scripts/build-extension.js",
     "test": "node scripts/build-extension.js && node --test src/stabilize.test.js src/fix-dom.test.js",
+    "demo": "node docs/scene/render.mjs",
     "start": "npx --yes serve . -p 4173"
   },
   "dependencies": {
