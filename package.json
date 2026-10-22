@@ -1,0 +1,12 @@
+{
+  "name": "satr",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test src/stabilize.test.js",
+    "start": "npx --yes serve . -p 4173"
+  },
+  "dependencies": {
+    "bidi-js": "^1.0.3"
+  }
+}

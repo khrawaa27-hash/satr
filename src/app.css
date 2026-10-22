@@ -1,0 +1,157 @@
+:root {
+  color: #1c1915;
+  background: #efe6d6;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  line-height: 1.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  width: min(920px, calc(100% - 32px));
+  margin: 40px auto 64px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(32px, 5vw, 52px);
+  line-height: 1.25;
+  font-weight: 650;
+  letter-spacing: 0;
+}
+
+.mark {
+  margin: 0 0 8px;
+  color: #8a3d12;
+  font-weight: 700;
+}
+
+.lead,
+.foot {
+  max-width: 62ch;
+  color: #4e463c;
+}
+
+.composer,
+.compare article {
+  background: #fbf7f0;
+  border: 1px solid #ddcfb8;
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.composer {
+  margin-top: 28px;
+}
+
+.row,
+.actions,
+.check {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.row {
+  justify-content: space-between;
+}
+
+label {
+  font-weight: 650;
+}
+
+textarea,
+.stage,
+.marks {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid #ddcfb8;
+  background: #fffdf9;
+  font: inherit;
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+  padding: 12px 14px;
+  margin-top: 8px;
+}
+
+.warnings {
+  min-height: 1.6em;
+  margin: 10px 0;
+  color: #8a3d12;
+}
+
+.quiet {
+  margin: 0;
+  color: #6d6458;
+}
+
+button {
+  border: 0;
+  border-radius: 999px;
+  padding: 10px 16px;
+  background: #1c1915;
+  color: #fbf7f0;
+  font: inherit;
+  cursor: pointer;
+}
+
+#sample {
+  background: transparent;
+  color: #1c1915;
+  border: 1px solid #1c1915;
+}
+
+.check {
+  color: #4e463c;
+  font-weight: 500;
+}
+
+.marks {
+  white-space: pre-wrap;
+  padding: 12px 14px;
+  direction: ltr;
+  text-align: left;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 14px;
+}
+
+.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.compare h2 {
+  margin: 0 0 10px;
+  font-size: 16px;
+}
+
+.stage {
+  min-height: 140px;
+  padding: 12px 14px;
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+@media (max-width: 760px) {
+  .compare {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

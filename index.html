@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>سطر — تثبيت اتجاه العربي والإنجليزي</title>
+    <link rel="stylesheet" href="./src/app.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <p class="mark">سطر</p>
+        <h1>ثبّت ترتيب الكلمات قبل ما تنشر.</h1>
+        <p class="lead">
+          سطر عربي فيه كلمة إنجليزية ينقلب على X وGitHub لأن الصفحة اتجاهها يسار.
+          سطر يغلّف الكلمة الإنجليزية بعازل، ويثبّت الفقرة لليمين، بدون ما يعكس الحروف.
+        </p>
+      </header>
+
+      <section class="composer">
+        <div class="row">
+          <label for="input">المنشور</label>
+          <button id="sample" type="button">المثال</button>
+        </div>
+        <textarea id="input" spellcheck="false"></textarea>
+        <div id="warnings" class="warnings" aria-live="polite"></div>
+        <div class="actions">
+          <button id="copy" type="button">انسخ النص الجاهز</button>
+          <label class="check">
+            <input id="marks-toggle" type="checkbox" />
+            أظهر علامات الاتجاه
+          </label>
+        </div>
+        <pre id="marks" class="marks" hidden></pre>
+      </section>
+
+      <section class="compare">
+        <article>
+          <h2>قبل، داخل صفحة اتجاهها يسار</h2>
+          <div id="before" class="stage" dir="ltr"></div>
+        </article>
+        <article>
+          <h2>بعد التثبيت، نفس الصفحة</h2>
+          <div id="after" class="stage" dir="ltr"></div>
+        </article>
+      </section>
+
+      <p class="foot">
+        العلامات تثبّت ترتيب الكلمات وموضع النقطة. محاذاة الفقرة يميناً قرار الموقع نفسه،
+        وهذا يأتي مع إضافة المتصفح. ما نضع علامة قلب إجباري، لأنها تُعلَّم داخل GitHub وVS Code.
+      </p>
+    </main>
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
